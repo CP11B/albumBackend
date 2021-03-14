@@ -39,6 +39,7 @@ public class AlbumServiceDB implements AlbumService{
 
 	public boolean removeAlbum(Long id) {
 		this.repo.deleteById(id);
+		//System.out.println(this.repo.existsById(id));
 		return this.repo.existsById(id);
 	}
 

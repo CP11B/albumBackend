@@ -1,1 +1,1 @@
-INSERT INTO `album` (`title`, `artist`, `release_year`, `img_src`, `play_src`) VALUES ('whenben', 'catshark and the flavorcrumpets', 'www.google.com', 'www.google.com', 2000);
+INSERT INTO `album` (`title`, `artist`, `img_src`, `play_src`, `release_year`) VALUES ('whenben', 'catshark and the flavorcrumpets', 'askjeeves', 'googly', 2000);
