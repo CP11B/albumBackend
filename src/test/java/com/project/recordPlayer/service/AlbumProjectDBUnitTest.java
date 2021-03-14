@@ -1,8 +1,6 @@
 package com.project.recordPlayer.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.when;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -70,16 +68,18 @@ public class AlbumProjectDBUnitTest {
 	
 	@Test
 	void testRead() {
+		// Create a new piece of test data
+		Album newAlbum = new Album("uni of life", "river willow stone", "askjeeves", "googly", 2000);
 		
-		Album newAlbum1 = new Album("uni of life", "river willow stone", "askjeeves", "googly", 2000);
+		// Add test data to a list
 		List<Album> albums = new ArrayList<>();
+		albums.add(newAlbum);
 
-		albums.add(newAlbum1);
-
+		// Return list
 		Mockito.when(this.repo.findAll()).thenReturn(albums);
 
+		// Check returned list is the same as the test data
 		assertThat(this.service.getAlbum()).isEqualTo(albums);
-
 		Mockito.verify(this.repo, Mockito.times(1)).findAll();		
 	}
 }
